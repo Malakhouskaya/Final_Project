@@ -28,9 +28,44 @@ string [] FillArray(int size)
     return array;
 }
 
+int NumberOfElementsToPrint(string[] array)
+{
+    int count = 0;
+    for(int i=0; i < array.Length;i++)
+    {
+        int length = array[i].Length;
+        if (length <= 3)
+        {
+           count++;
+        }
+    }
+    return count;
+}
+
+void NewArr (string[]array, string[] newArray)
+{
+int n = 0;
+for (int j = 0; j < array.Length; j++)
+{
+    int length = array[j].Length;
+    if (length <= 3)
+    {
+        newArray[n] = array[j];
+        n++;
+    }
+}      
+    
+Console.WriteLine($"[{string.Join(",",newArray)}]");
+}
+
+
 Console.WriteLine("Input the array size");
 int size = Convert.ToInt32(Console.ReadLine());
 
 string[] array = FillArray(size);
 Console.WriteLine($"[{string.Join(",",array)}]");
 
+int newLength = NumberOfElementsToPrint(array);
+string[] newArray = new string [newLength];
+
+NewArr(array, newArray);
