@@ -65,7 +65,6 @@ int size = Convert.ToInt32(Console.ReadLine());
 string[] array = FillArray(size);
 Console.WriteLine($"[{string.Join(",",array)}]");
 
-int newLength = NumberOfElementsToPrint(array);
-string[] newArray = new string [newLength];
+string[] newArray = new string [NumberOfElementsToPrint(array)];
 
 NewArr(array, newArray);
